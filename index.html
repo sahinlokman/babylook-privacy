@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for Babylook - AI Baby Face Prediction App">
-    <title>Babylook - Privacy Policy</title>
+    <title>Babylook - AI Baby Face Prediction App</title>
+    <meta name="description" content="Babylook uses AI to predict what your future baby might look like. No data collected, no photos stored. Powered by Nanobana Pro model.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --border-color: rgba(255, 255, 255, 0.06);
-            --text-primary: #f0f0f5;
-            --text-secondary: #8a8a9a;
-            --text-muted: #5a5a6a;
-            --accent-gradient: linear-gradient(135deg, #a78bfa, #ec4899, #f97316);
-            --accent-purple: #a78bfa;
-            --accent-pink: #ec4899;
-            --accent-orange: #f97316;
-            --glow-purple: rgba(167, 139, 250, 0.15);
-            --glow-pink: rgba(236, 72, 153, 0.1);
+            --primary: #7C3AED;
+            --primary-light: #A78BFA;
+            --primary-dark: #5B21B6;
+            --accent: #F472B6;
+            --accent-light: #FBCFE8;
+            --bg-dark: #0F0B1A;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.08);
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --border: rgba(255, 255, 255, 0.08);
+            --gradient-1: linear-gradient(135deg, #7C3AED, #F472B6);
+            --gradient-2: linear-gradient(135deg, #6366F1, #8B5CF6, #A855F7);
+            --gradient-3: linear-gradient(135deg, #F472B6, #FB923C);
+            --shadow-glow: 0 0 60px rgba(124, 58, 237, 0.15);
         }
 
         * {
@@ -31,58 +34,158 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-primary);
+            background: var(--bg-dark);
             color: var(--text-primary);
             line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
 
-        /* Ambient background effects */
-        .bg-effects {
+        /* Navigation */
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(15, 11, 26, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.75rem 2rem;
+            background: rgba(15, 11, 26, 0.95);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            border-radius: 1px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
             width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
             overflow: hidden;
         }
 
-        .bg-orb {
+        .hero-bg-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.4;
-            animation: float 20s ease-in-out infinite;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
         }
 
-        .bg-orb-1 {
-            width: 600px;
-            height: 600px;
-            background: var(--glow-purple);
-            top: -200px;
+        .hero-bg-orb:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            background: var(--primary);
+            top: -100px;
             right: -100px;
             animation-delay: 0s;
         }
 
-        .bg-orb-2 {
-            width: 500px;
-            height: 500px;
-            background: var(--glow-pink);
-            bottom: -150px;
-            left: -100px;
-            animation-delay: -10s;
-        }
-
-        .bg-orb-3 {
+        .hero-bg-orb:nth-child(2) {
             width: 400px;
             height: 400px;
-            background: rgba(249, 115, 22, 0.08);
+            background: var(--accent);
+            bottom: -50px;
+            left: -100px;
+            animation-delay: -3s;
+        }
+
+        .hero-bg-orb:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            background: #6366F1;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -90,478 +193,848 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -30px) scale(1.05); }
-            50% { transform: translate(-20px, 20px) scale(0.95); }
-            75% { transform: translate(20px, 10px) scale(1.02); }
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
         }
 
-        /* Noise texture overlay */
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-        }
-
-        .container {
+        .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Header */
-        header {
-            padding: 60px 0 40px;
             text-align: center;
+            max-width: 800px;
         }
 
-        .logo-container {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 32px;
-            padding: 12px 24px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.3);
             border-radius: 100px;
-            backdrop-filter: blur(20px);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary-light);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease forwards;
         }
 
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--accent-gradient);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        .logo-text {
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
 
-        header h1 {
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 16px;
-            background: var(--accent-gradient);
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .subtitle {
-            font-size: 1.05rem;
+        .hero p {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
             color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .effective-date {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 8px 18px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 100px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* Main Content */
-        main {
-            padding-bottom: 80px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            padding: 32px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: border-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .section:hover {
-            border-color: rgba(167, 139, 250, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .section-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: var(--accent-gradient);
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 16px;
-        }
-
-        .section h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .section p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-
-        .section p:last-child {
-            margin-bottom: 0;
-        }
-
-        .section ul {
-            list-style: none;
-            padding: 0;
-            margin: 12px 0;
-        }
-
-        .section ul li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 10px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .section ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent-gradient);
-        }
-
-        .highlight-box {
-            margin: 16px 0;
-            padding: 20px 24px;
-            background: rgba(167, 139, 250, 0.05);
-            border-left: 3px solid var(--accent-purple);
-            border-radius: 0 12px 12px 0;
-        }
-
-        .highlight-box p {
-            color: var(--text-primary) !important;
-            font-weight: 500;
-            font-size: 0.92rem !important;
-        }
-
-        /* Summary cards */
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 48px;
-        }
-
-        .summary-card {
-            padding: 24px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            text-align: center;
-            transition: border-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .summary-card:hover {
-            border-color: rgba(167, 139, 250, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .summary-card .icon {
-            font-size: 2rem;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .summary-card h3 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--text-primary);
-        }
-
-        .summary-card p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0 60px;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-        }
-
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: var(--accent-purple);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        footer a:hover {
-            color: var(--accent-pink);
-        }
-
-        /* Fade-in animation */
-        .fade-in {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 0.6s ease 0.2s forwards;
             opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease 0.3s forwards;
+            opacity: 0;
         }
 
         @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.15s; }
-        .section:nth-child(3) { animation-delay: 0.2s; }
-        .section:nth-child(4) { animation-delay: 0.25s; }
-        .section:nth-child(5) { animation-delay: 0.3s; }
-        .section:nth-child(6) { animation-delay: 0.35s; }
-        .section:nth-child(7) { animation-delay: 0.4s; }
-        .section:nth-child(8) { animation-delay: 0.45s; }
-        .section:nth-child(9) { animation-delay: 0.5s; }
-        .section:nth-child(10) { animation-delay: 0.55s; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(124, 58, 237, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-icon.purple { background: rgba(124, 58, 237, 0.15); }
+        .feature-icon.pink { background: rgba(244, 114, 182, 0.15); }
+        .feature-icon.blue { background: rgba(99, 102, 241, 0.15); }
+        .feature-icon.green { background: rgba(16, 185, 129, 0.15); }
+        .feature-icon.orange { background: rgba(251, 146, 60, 0.15); }
+        .feature-icon.cyan { background: rgba(34, 211, 238, 0.15); }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* How It Works */
+        .steps-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            background: var(--bg-card-hover);
+            transform: translateX(8px);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .step-content h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Privacy Section */
+        .privacy-section {
+            background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.03), transparent);
+        }
+
+        .privacy-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+        }
+
+        .privacy-highlight {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .privacy-highlight:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .privacy-highlight .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-highlight h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .privacy-highlight p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Privacy Policy Detail */
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .policy-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .policy-block:hover {
+            border-color: rgba(124, 58, 237, 0.2);
+        }
+
+        .policy-block h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .policy-block h3 .emoji {
+            font-size: 1.4rem;
+        }
+
+        .policy-block p, .policy-block li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .policy-block ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.75rem;
+        }
+
+        .policy-block ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .policy-block ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: 700;
+        }
+
+        .policy-date {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 1rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .footer-logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-contact {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-contact a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--accent);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Divider */
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+            margin: 0 auto 3rem;
+        }
 
         /* Responsive */
-        @media (max-width: 640px) {
-            header { padding: 40px 0 30px; }
-            .section { padding: 24px; border-radius: 16px; }
-            .summary-grid { grid-template-columns: 1fr 1fr; }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 11, 26, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .policy-block {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Scroll-reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="bg-effects">
-        <div class="bg-orb bg-orb-1"></div>
-        <div class="bg-orb bg-orb-2"></div>
-        <div class="bg-orb bg-orb-3"></div>
-    </div>
-    <div class="noise-overlay"></div>
 
-    <div class="container">
-        <header class="fade-in">
-            <div class="logo-container">
-                <div class="logo-icon">👶</div>
-                <span class="logo-text">Babylook</span>
-            </div>
-            <h1>Privacy Policy</h1>
-            <p class="subtitle">Your privacy matters to us. Here's how we protect your data.</p>
-            <span class="effective-date">Effective Date: February 15, 2026</span>
-        </header>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-icon">👶</div>
+                <span class="nav-logo-text">Babylook</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
 
-        <!-- Summary Cards -->
-        <div class="summary-grid fade-in" style="animation-delay: 0.05s;">
-            <div class="summary-card">
-                <span class="icon">🔒</span>
-                <h3>Secure Processing</h3>
-                <p>Photos are processed securely and never stored permanently</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-orb"></div>
+        <div class="hero-bg-orb"></div>
+        <div class="hero-bg-orb"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Powered by Nanobana Pro AI
             </div>
-            <div class="summary-card">
-                <span class="icon">🚫</span>
-                <h3>No Selling Data</h3>
-                <p>We never sell your personal information to third parties</p>
-            </div>
-            <div class="summary-card">
-                <span class="icon">🗑️</span>
-                <h3>Auto-Deletion</h3>
-                <p>Uploaded photos are automatically deleted after processing</p>
-            </div>
-            <div class="summary-card">
-                <span class="icon">👤</span>
-                <h3>Minimal Collection</h3>
-                <p>We only collect what's absolutely necessary</p>
+            <h1>See Your Future <span class="gradient-text">Baby's Face</span> with AI</h1>
+            <p>Upload parent photos and let our advanced Nanobana Pro AI model predict what your baby might look like. No data collected, no photos stored — your privacy is our priority.</p>
+            <div class="hero-actions">
+                <a href="#features" class="btn btn-primary">
+                    ✨ Explore Features
+                </a>
+                <a href="#privacy-policy" class="btn btn-secondary">
+                    🔒 Privacy Policy
+                </a>
             </div>
         </div>
+    </section>
 
-        <main>
-            <!-- Section 1 -->
-            <div class="section fade-in">
-                <div class="section-number">1</div>
-                <h2>Introduction</h2>
-                <p>Welcome to <strong>Babylook</strong> ("we," "our," or "us"). Babylook is an AI-powered mobile application that generates predictions of what a baby might look like based on parent photos. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.</p>
-                <p>By using Babylook, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this privacy policy, please do not access the application.</p>
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="section-header reveal">
+            <div class="section-label">✨ Features</div>
+            <h2>Why Choose Babylook?</h2>
+            <p>Experience the most advanced and privacy-focused baby face prediction app available.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon purple">🤖</div>
+                <h3>Nanobana Pro AI Model</h3>
+                <p>Powered by the cutting-edge Nanobana Pro model for incredibly realistic and accurate baby face predictions.</p>
             </div>
-
-            <!-- Section 2 -->
-            <div class="section fade-in">
-                <div class="section-number">2</div>
-                <h2>Information We Collect</h2>
-                <p>We collect the following types of information to provide and improve our services:</p>
-
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 20px 0 12px; color: var(--text-primary);">Photos You Upload</h3>
-                <ul>
-                    <li>Parent photos that you voluntarily upload for baby face prediction</li>
-                    <li>These photos are sent to our secure servers solely for AI processing</li>
-                    <li>Photos are automatically deleted from our servers after processing is complete</li>
-                </ul>
-
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 20px 0 12px; color: var(--text-primary);">Generated Images</h3>
-                <ul>
-                    <li>AI-generated baby prediction images are stored locally on your device</li>
-                    <li>You have full control over these images and can delete them at any time</li>
-                </ul>
-
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 20px 0 12px; color: var(--text-primary);">Usage Data</h3>
-                <ul>
-                    <li>App usage analytics (e.g., feature usage, session duration)</li>
-                    <li>Device information (e.g., device model, OS version)</li>
-                    <li>Crash reports and performance data</li>
-                </ul>
-
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 20px 0 12px; color: var(--text-primary);">Subscription Information</h3>
-                <ul>
-                    <li>Purchase and subscription status managed through Apple's App Store</li>
-                    <li>We do not collect or store your payment information directly</li>
-                </ul>
+            <div class="feature-card reveal">
+                <div class="feature-icon pink">🔒</div>
+                <h3>Zero Data Collection</h3>
+                <p>We collect absolutely no personal data. Your photos and results stay entirely on your device.</p>
             </div>
-
-            <!-- Section 3 -->
-            <div class="section fade-in">
-                <div class="section-number">3</div>
-                <h2>How We Use Your Information</h2>
-                <p>We use the information we collect for the following purposes:</p>
-                <ul>
-                    <li><strong>AI Processing:</strong> To generate baby face predictions using our AI models</li>
-                    <li><strong>Service Improvement:</strong> To improve and optimize our AI algorithms and app performance</li>
-                    <li><strong>Subscription Management:</strong> To manage your subscription status and provide access to premium features</li>
-                    <li><strong>Rate Limiting:</strong> To ensure fair usage of our services across all users</li>
-                    <li><strong>Technical Support:</strong> To diagnose and fix technical issues</li>
-                    <li><strong>Communication:</strong> To respond to your inquiries and provide customer support</li>
-                </ul>
+            <div class="feature-card reveal">
+                <div class="feature-icon blue">🚫</div>
+                <h3>No Photo Storage</h3>
+                <p>Generated photos are not stored by the application. Everything is processed in real-time and stays with you.</p>
             </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon green">⚡</div>
+                <h3>Instant Results</h3>
+                <p>Get your baby face prediction in seconds with our optimized AI processing pipeline.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon orange">🎨</div>
+                <h3>High Quality Output</h3>
+                <p>Crystal-clear, high-resolution baby face predictions that capture realistic facial features and details.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon cyan">📱</div>
+                <h3>Easy to Use</h3>
+                <p>Simple and intuitive interface — just upload two parent photos and see the magic happen.</p>
+            </div>
+        </div>
+    </section>
 
-            <!-- Section 4 -->
-            <div class="section fade-in">
-                <div class="section-number">4</div>
-                <h2>Photo Processing & Data Security</h2>
-                <div class="highlight-box">
-                    <p>🛡️ Your photos are transmitted over encrypted connections (HTTPS/TLS) and are automatically deleted from our servers immediately after processing. We do not retain, share, or use your photos for any purpose other than generating predictions.</p>
+    <!-- How It Works -->
+    <section class="section" id="how-it-works">
+        <div class="section-header reveal">
+            <div class="section-label">🔧 How It Works</div>
+            <h2>Three Simple Steps</h2>
+            <p>Getting your baby face prediction is quick and easy.</p>
+        </div>
+        <div class="steps-container">
+            <div class="step reveal">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Upload Parent Photos</h3>
+                    <p>Select or take photos of both parents. The AI works best with clear, front-facing photos with good lighting.</p>
                 </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>AI Processing with Nanobana Pro</h3>
+                    <p>Our advanced Nanobana Pro AI model analyzes facial features from both photos and generates a realistic prediction of your future baby.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>See Your Baby</h3>
+                    <p>View and share your baby face prediction instantly. Remember, no photos are stored by the app — it's all processed in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Highlights -->
+    <section class="section privacy-section" id="privacy">
+        <div class="section-header reveal">
+            <div class="section-label">🛡️ Your Privacy</div>
+            <h2>Privacy First, Always</h2>
+            <p>Babylook is designed from the ground up with your privacy as the top priority. We don't collect any data.</p>
+        </div>
+        <div class="privacy-highlights">
+            <div class="privacy-highlight reveal">
+                <div class="icon">🚫</div>
+                <h3>No Data Collection</h3>
+                <p>We do not collect, track, or store any personal information or usage data whatsoever.</p>
+            </div>
+            <div class="privacy-highlight reveal">
+                <div class="icon">🖼️</div>
+                <h3>No Photo Storage</h3>
+                <p>Generated baby photos are not stored in the app or on any servers. Everything is processed locally.</p>
+            </div>
+            <div class="privacy-highlight reveal">
+                <div class="icon">🤖</div>
+                <h3>Nanobana Pro Model</h3>
+                <p>Images are generated using the Nanobana Pro AI model, ensuring high-quality results without compromising privacy.</p>
+            </div>
+            <div class="privacy-highlight reveal">
+                <div class="icon">✅</div>
+                <h3>Full Transparency</h3>
+                <p>What you see is what you get — no hidden data collection, no analytics, no tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Detail -->
+    <section class="section" id="privacy-policy">
+        <div class="section-header reveal">
+            <div class="section-label">📄 Legal</div>
+            <h2>Privacy Policy</h2>
+            <p>Full details about how Babylook handles your information.</p>
+        </div>
+
+        <div class="policy-container">
+            <p class="policy-date">Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: February 15, 2026</p>
+
+            <div class="policy-block reveal">
+                <h3><span class="emoji">📋</span> Introduction</h3>
+                <p>Welcome to Babylook ("we," "our," or "us"). Babylook is an AI-powered mobile application that generates predictions of what a baby might look like based on parent photos. This Privacy Policy explains how we handle your information when you use our mobile application.</p>
+                <p style="margin-top: 0.75rem;">By using Babylook, you agree to the terms of this privacy policy. If you do not agree with the terms, please do not access the application.</p>
+            </div>
+
+            <div class="policy-block reveal">
+                <h3><span class="emoji">📊</span> Information We Collect</h3>
+                <p><strong>We do not collect any personal data.</strong> Babylook is designed to operate without collecting, storing, or transmitting any user data. Specifically:</p>
                 <ul>
-                    <li>All data transmission is encrypted using industry-standard TLS/SSL protocols</li>
-                    <li>Photos are processed in real-time and not stored on our servers</li>
-                    <li>Generated results are stored only on your local device</li>
-                    <li>We implement appropriate technical and organizational security measures</li>
-                    <li>Our AI processing infrastructure is hosted on secure cloud services</li>
+                    <li>We do not collect or store your photos</li>
+                    <li>We do not collect usage analytics or tracking data</li>
+                    <li>We do not collect device information</li>
+                    <li>We do not use cookies or similar tracking technologies</li>
+                    <li>We do not collect location data</li>
+                    <li>We do not collect any personal identifiers</li>
                 </ul>
             </div>
 
-            <!-- Section 5 -->
-            <div class="section fade-in">
-                <div class="section-number">5</div>
-                <h2>Third-Party Services</h2>
+            <div class="policy-block reveal">
+                <h3><span class="emoji">🤖</span> Image Generation</h3>
+                <p>Baby face predictions are generated using the <strong>Nanobana Pro AI model</strong>. Important details about the image generation process:</p>
+                <ul>
+                    <li>Images are generated using the Nanobana Pro model in real-time</li>
+                    <li>Generated photos are not stored by the application</li>
+                    <li>No images are uploaded to or retained on any servers</li>
+                    <li>The AI processing is designed to respect your privacy at every step</li>
+                </ul>
+            </div>
+
+            <div class="policy-block reveal">
+                <h3><span class="emoji">🔐</span> Data Security</h3>
+                <p>Since we do not collect or store any data, there is no risk of data breach or unauthorized access to your personal information through our app. Your photos and generated images remain entirely under your control.</p>
+            </div>
+
+            <div class="policy-block reveal">
+                <h3><span class="emoji">🔗</span> Third-Party Services</h3>
                 <p>Our app may use the following third-party services:</p>
                 <ul>
-                    <li><strong>Apple App Store:</strong> For in-app purchases and subscription management</li>
-                    <li><strong>Cloud AI Services:</strong> For processing images through our AI prediction models</li>
-                    <li><strong>Analytics Services:</strong> For anonymous app usage statistics to improve our service</li>
+                    <li><strong>Apple App Store</strong> — For in-app purchases and subscription management. Apple's own privacy policy applies to these transactions.</li>
                 </ul>
-                <p>Each third-party service has its own privacy policy governing the use of your information. We encourage you to review their respective privacy policies.</p>
+                <p style="margin-top: 0.75rem;">We encourage you to review Apple's privacy policy for information on how they handle your data.</p>
             </div>
 
-            <!-- Section 6 -->
-            <div class="section fade-in">
-                <div class="section-number">6</div>
-                <h2>Data Retention</h2>
-                <ul>
-                    <li><strong>Uploaded Photos:</strong> Deleted immediately after AI processing is complete</li>
-                    <li><strong>Generated Images:</strong> Stored locally on your device until you choose to delete them</li>
-                    <li><strong>Usage Analytics:</strong> Retained in anonymized form for up to 12 months</li>
-                    <li><strong>Subscription Data:</strong> Retained while your account/subscription is active</li>
-                </ul>
+            <div class="policy-block reveal">
+                <h3><span class="emoji">👶</span> Children's Privacy</h3>
+                <p>Babylook is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. Since we do not collect any data, there is no risk of children's data being stored.</p>
+                <p style="margin-top: 0.75rem;">If you are a parent or guardian and have concerns, please contact us using the information provided below.</p>
             </div>
 
-            <!-- Section 7 -->
-            <div class="section fade-in">
-                <div class="section-number">7</div>
-                <h2>Your Rights</h2>
-                <p>Depending on your location, you may have the following rights regarding your personal data:</p>
-                <ul>
-                    <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
-                    <li><strong>Deletion:</strong> Request deletion of your personal data</li>
-                    <li><strong>Correction:</strong> Request correction of inaccurate personal data</li>
-                    <li><strong>Portability:</strong> Request transfer of your data in a machine-readable format</li>
-                    <li><strong>Objection:</strong> Object to our processing of your personal data</li>
-                    <li><strong>Withdrawal of Consent:</strong> Withdraw consent at any time where we rely on consent to process your data</li>
-                </ul>
-                <p>To exercise any of these rights, please contact us using the information provided below.</p>
+            <div class="policy-block reveal">
+                <h3><span class="emoji">⚖️</span> Your Rights</h3>
+                <p>Since Babylook does not collect any personal data, traditional data rights (access, deletion, correction, portability) do not apply as there is no data to manage. However, if you have any questions or concerns, you are always welcome to contact us.</p>
             </div>
 
-            <!-- Section 8 -->
-            <div class="section fade-in">
-                <div class="section-number">8</div>
-                <h2>Children's Privacy</h2>
-                <p>Babylook is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will take steps to delete such information immediately.</p>
-                <p>If you are a parent or guardian and believe that your child has provided us with personal information, please contact us so that we can take necessary actions.</p>
+            <div class="policy-block reveal">
+                <h3><span class="emoji">🔄</span> Changes to This Policy</h3>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
             </div>
 
-            <!-- Section 9 -->
-            <div class="section fade-in">
-                <div class="section-number">9</div>
-                <h2>Changes to This Policy</h2>
-                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top of this page.</p>
-                <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+            <div class="policy-block reveal" id="contact">
+                <h3><span class="emoji">📧</span> Contact Us</h3>
+                <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us:</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Email:</strong> <a href="mailto:lokman782782@gmail.com" style="color: var(--primary-light); text-decoration: none;">lokman782782@gmail.com</a>
+                </p>
+                <p style="margin-top: 0.5rem;">We will respond to your inquiry as soon as possible.</p>
             </div>
+        </div>
+    </section>
 
-            <!-- Section 10 -->
-            <div class="section fade-in">
-                <div class="section-number">10</div>
-                <h2>Contact Us</h2>
-                <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
-                <div class="highlight-box">
-                    <p>📧 Email: <a href="mailto:sahinlokman@icloud.com" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">sahinlokman@icloud.com</a></p>
-                </div>
-                <p>We will respond to your inquiry within 30 days.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="#" class="footer-logo">
+                <div class="footer-logo-icon">👶</div>
+                <span class="footer-logo-text">Babylook</span>
+            </a>
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#privacy-policy">Privacy Policy</a>
+                <a href="#contact">Contact</a>
             </div>
-        </main>
+            <div class="footer-contact">
+                📧 <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a>
+            </div>
+            <p class="footer-copy">© 2026 Babylook. All rights reserved.</p>
+        </div>
+    </footer>
 
-        <footer>
-            <p>&copy; 2026 Babylook. All rights reserved.</p>
-            <p style="margin-top: 8px;">
-                <a href="https://github.com/sahinlokman" target="_blank" rel="noopener">GitHub</a>
-            </p>
-        </footer>
-    </div>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            mobileMenuBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

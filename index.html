@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Babylook - AI Baby Face Prediction App">
+    <title>Babylook - Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --text-primary: #f0f0f5;
+            --text-secondary: #8a8a9a;
+            --text-muted: #5a5a6a;
+            --accent-gradient: linear-gradient(135deg, #a78bfa, #ec4899, #f97316);
+            --accent-purple: #a78bfa;
+            --accent-pink: #ec4899;
+            --accent-orange: #f97316;
+            --glow-purple: rgba(167, 139, 250, 0.15);
+            --glow-pink: rgba(236, 72, 153, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background effects */
+        .bg-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.4;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-orb-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--glow-purple);
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .bg-orb-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--glow-pink);
+            bottom: -150px;
+            left: -100px;
+            animation-delay: -10s;
+        }
+
+        .bg-orb-3 {
+            width: 400px;
+            height: 400px;
+            background: rgba(249, 115, 22, 0.08);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 10px) scale(1.02); }
+        }
+
+        /* Noise texture overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 32px;
+            padding: 12px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            backdrop-filter: blur(20px);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        header h1 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .effective-date {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        main {
+            padding-bottom: 80px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: rgba(167, 139, 250, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--accent-gradient);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+
+        .section ul li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+        }
+
+        .highlight-box {
+            margin: 16px 0;
+            padding: 20px 24px;
+            background: rgba(167, 139, 250, 0.05);
+            border-left: 3px solid var(--accent-purple);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-primary) !important;
+            font-weight: 500;
+            font-size: 0.92rem !important;
+        }
+
+        /* Summary cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .summary-card {
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            text-align: center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .summary-card:hover {
+            border-color: rgba(167, 139, 250, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .summary-card .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .summary-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .summary-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0 60px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.15s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.25s; }
+        .section:nth-child(5) { animation-delay: 0.3s; }
+        .section:nth-child(6) { animation-delay: 0.35s; }
+        .section:nth-child(7) { animation-delay: 0.4s; }
+        .section:nth-child(8) { animation-delay: 0.45s; }
+        .section:nth-child(9) { animation-delay: 0.5s; }
+        .section:nth-child(10) { animation-delay: 0.55s; }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header { padding: 40px 0 30px; }
+            .section { padding: 24px; border-radius: 16px; }
+            .summary-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-effects">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <div class="container">
+        <header class="fade-in">
+            <div class="logo-container">
+                <div class="logo-icon">👶</div>
+                <span class="logo-text">Babylook</span>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Your privacy matters to us. Here's how we protect your data.</p>
+            <span class="effective-date">Effective Date: February 15, 2026</span>
+        </header>
+
+        <!-- Summary Cards -->
+        <div class="summary-grid fade-in" style="animation-delay: 0.05s;">
+            <div class="summary-card">
+                <span class="icon">🔒</span>
+                <h3>Secure Processing</h3>
+                <p>Photos are processed securely and never stored permanently</p>
+            </div>
+            <div class="summary-card">
+                <span class="icon">🚫</span>
+                <h3>No Selling Data</h3>
+                <p>We never sell your personal information to third parties</p>
+            </div>
+            <div class="summary-card">
+                <span class="icon">🗑️</span>
+                <h3>Auto-Deletion</h3>
+                <p>Uploaded photos are automatically deleted after processing</p>
+            </div>
+            <div class="summary-card">
+                <span class="icon">👤</span>
+                <h3>Minimal Collection</h3>
+                <p>We only collect what's absolutely necessary</p>
+            </div>
+        </div>
+
+        <main>
+            <!-- Section 1 -->
+            <div class="section fade-in">
+                <div class="section-number">1</div>
+                <h2>Introduction</h2>
+                <p>Welcome to <strong>Babylook</strong> ("we," "our," or "us"). Babylook is an AI-powered mobile application that generates predictions of what a baby might look like based on parent photos. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.</p>
+                <p>By using Babylook, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this privacy policy, please do not access the application.</p>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section fade-in">
+                <div class="section-number">2</div>
+                <h2>Information We Collect</h2>
+                <p>We collect the following types of information to provide and improve our services:</p>
+
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 20px 0 12px; color: var(--text-primary);">Photos You Upload</h3>
+                <ul>
+                    <li>Parent photos that you voluntarily upload for baby face prediction</li>
+                    <li>These photos are sent to our secure servers solely for AI processing</li>
+                    <li>Photos are automatically deleted from our servers after processing is complete</li>
+                </ul>
+
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 20px 0 12px; color: var(--text-primary);">Generated Images</h3>
+                <ul>
+                    <li>AI-generated baby prediction images are stored locally on your device</li>
+                    <li>You have full control over these images and can delete them at any time</li>
+                </ul>
+
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 20px 0 12px; color: var(--text-primary);">Usage Data</h3>
+                <ul>
+                    <li>App usage analytics (e.g., feature usage, session duration)</li>
+                    <li>Device information (e.g., device model, OS version)</li>
+                    <li>Crash reports and performance data</li>
+                </ul>
+
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 20px 0 12px; color: var(--text-primary);">Subscription Information</h3>
+                <ul>
+                    <li>Purchase and subscription status managed through Apple's App Store</li>
+                    <li>We do not collect or store your payment information directly</li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section fade-in">
+                <div class="section-number">3</div>
+                <h2>How We Use Your Information</h2>
+                <p>We use the information we collect for the following purposes:</p>
+                <ul>
+                    <li><strong>AI Processing:</strong> To generate baby face predictions using our AI models</li>
+                    <li><strong>Service Improvement:</strong> To improve and optimize our AI algorithms and app performance</li>
+                    <li><strong>Subscription Management:</strong> To manage your subscription status and provide access to premium features</li>
+                    <li><strong>Rate Limiting:</strong> To ensure fair usage of our services across all users</li>
+                    <li><strong>Technical Support:</strong> To diagnose and fix technical issues</li>
+                    <li><strong>Communication:</strong> To respond to your inquiries and provide customer support</li>
+                </ul>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="section fade-in">
+                <div class="section-number">4</div>
+                <h2>Photo Processing & Data Security</h2>
+                <div class="highlight-box">
+                    <p>🛡️ Your photos are transmitted over encrypted connections (HTTPS/TLS) and are automatically deleted from our servers immediately after processing. We do not retain, share, or use your photos for any purpose other than generating predictions.</p>
+                </div>
+                <ul>
+                    <li>All data transmission is encrypted using industry-standard TLS/SSL protocols</li>
+                    <li>Photos are processed in real-time and not stored on our servers</li>
+                    <li>Generated results are stored only on your local device</li>
+                    <li>We implement appropriate technical and organizational security measures</li>
+                    <li>Our AI processing infrastructure is hosted on secure cloud services</li>
+                </ul>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="section fade-in">
+                <div class="section-number">5</div>
+                <h2>Third-Party Services</h2>
+                <p>Our app may use the following third-party services:</p>
+                <ul>
+                    <li><strong>Apple App Store:</strong> For in-app purchases and subscription management</li>
+                    <li><strong>Cloud AI Services:</strong> For processing images through our AI prediction models</li>
+                    <li><strong>Analytics Services:</strong> For anonymous app usage statistics to improve our service</li>
+                </ul>
+                <p>Each third-party service has its own privacy policy governing the use of your information. We encourage you to review their respective privacy policies.</p>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="section fade-in">
+                <div class="section-number">6</div>
+                <h2>Data Retention</h2>
+                <ul>
+                    <li><strong>Uploaded Photos:</strong> Deleted immediately after AI processing is complete</li>
+                    <li><strong>Generated Images:</strong> Stored locally on your device until you choose to delete them</li>
+                    <li><strong>Usage Analytics:</strong> Retained in anonymized form for up to 12 months</li>
+                    <li><strong>Subscription Data:</strong> Retained while your account/subscription is active</li>
+                </ul>
+            </div>
+
+            <!-- Section 7 -->
+            <div class="section fade-in">
+                <div class="section-number">7</div>
+                <h2>Your Rights</h2>
+                <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal data</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate personal data</li>
+                    <li><strong>Portability:</strong> Request transfer of your data in a machine-readable format</li>
+                    <li><strong>Objection:</strong> Object to our processing of your personal data</li>
+                    <li><strong>Withdrawal of Consent:</strong> Withdraw consent at any time where we rely on consent to process your data</li>
+                </ul>
+                <p>To exercise any of these rights, please contact us using the information provided below.</p>
+            </div>
+
+            <!-- Section 8 -->
+            <div class="section fade-in">
+                <div class="section-number">8</div>
+                <h2>Children's Privacy</h2>
+                <p>Babylook is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will take steps to delete such information immediately.</p>
+                <p>If you are a parent or guardian and believe that your child has provided us with personal information, please contact us so that we can take necessary actions.</p>
+            </div>
+
+            <!-- Section 9 -->
+            <div class="section fade-in">
+                <div class="section-number">9</div>
+                <h2>Changes to This Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top of this page.</p>
+                <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+            </div>
+
+            <!-- Section 10 -->
+            <div class="section fade-in">
+                <div class="section-number">10</div>
+                <h2>Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+                <div class="highlight-box">
+                    <p>📧 Email: <a href="mailto:sahinlokman@icloud.com" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">sahinlokman@icloud.com</a></p>
+                </div>
+                <p>We will respond to your inquiry within 30 days.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Babylook. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="https://github.com/sahinlokman" target="_blank" rel="noopener">GitHub</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

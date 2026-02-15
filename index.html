@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babylook - AI Baby Face Prediction App</title>
     <meta name="description" content="Babylook uses AI to predict what your future baby might look like. No data collected, no photos stored. Powered by Nanobana Pro model.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -24,7 +25,6 @@
             --border: rgba(255, 255, 255, 0.08);
             --gradient-1: linear-gradient(135deg, #7C3AED, #F472B6);
             --gradient-2: linear-gradient(135deg, #6366F1, #8B5CF6, #A855F7);
-            --gradient-3: linear-gradient(135deg, #F472B6, #FB923C);
             --shadow-glow: 0 0 60px rgba(124, 58, 237, 0.15);
         }
 
@@ -81,15 +81,12 @@
             text-decoration: none;
         }
 
-        .nav-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
+        .nav-logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-logo-text {
@@ -162,6 +159,7 @@
             filter: blur(80px);
             opacity: 0.3;
             animation: float 8s ease-in-out infinite;
+            z-index: 0;
         }
 
         .hero-bg-orb:nth-child(1) {
@@ -182,26 +180,41 @@
             animation-delay: -3s;
         }
 
-        .hero-bg-orb:nth-child(3) {
-            width: 300px;
-            height: 300px;
-            background: #6366F1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: -5s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-30px) scale(1.05); }
-        }
-
-        .hero-content {
+        .hero-content-wrapper {
             position: relative;
             z-index: 2;
-            text-align: center;
-            max-width: 800px;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            animation: float-slow 6s ease-in-out infinite;
+        }
+
+        .hero-showcase-img {
+            max-width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            max-height: 600px;
+            object-fit: cover;
+        }
+
+        .hero-showcase-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(124, 58, 237, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.2);
         }
 
         .hero-badge {
@@ -232,8 +245,13 @@
             50% { opacity: 0.4; }
         }
 
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -249,18 +267,17 @@
         }
 
         .hero p {
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            font-size: clamp(1.05rem, 1.5vw, 1.2rem);
             color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
+            margin-bottom: 2.5rem;
             animation: fadeInUp 0.6s ease 0.2s forwards;
             opacity: 0;
+            max-width: 500px;
         }
 
         .hero-actions {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
             animation: fadeInUp 0.6s ease 0.3s forwards;
             opacity: 0;
@@ -602,15 +619,11 @@
             text-decoration: none;
         }
 
-        .footer-logo-icon {
+        .footer-logo-img {
             width: 36px;
             height: 36px;
-            background: var(--gradient-1);
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
+            object-fit: cover;
         }
 
         .footer-logo-text {
@@ -675,7 +688,7 @@
             .nav-links {
                 display: none;
                 position: fixed;
-                top: 70px;
+                top: 80px;
                 left: 0;
                 right: 0;
                 background: rgba(15, 11, 26, 0.98);
@@ -694,6 +707,35 @@
                 display: block;
             }
 
+            .hero-content-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-text {
+                text-align: center;
+                order: 1;
+            }
+            
+            .hero-image {
+                order: 2;
+                margin-top: -1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
             .step {
                 flex-direction: column;
                 gap: 1rem;
@@ -701,6 +743,7 @@
 
             .hero {
                 padding: 7rem 1.5rem 3rem;
+                min-height: auto;
             }
 
             .section {
@@ -739,7 +782,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-content">
             <a href="#" class="nav-logo">
-                <div class="nav-logo-icon">👶</div>
+                <img src="assets/logo.png" alt="Babylook Logo" class="nav-logo-img">
                 <span class="nav-logo-text">Babylook</span>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -758,20 +801,27 @@
         <div class="hero-bg-orb"></div>
         <div class="hero-bg-orb"></div>
         <div class="hero-bg-orb"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                Powered by Nanobana Pro AI
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Powered by Nanobana Pro AI
+                </div>
+                <h1>See Your Future <span class="gradient-text">Baby's Face</span> with AI</h1>
+                <p>Upload parent photos and let our advanced Nanobana Pro AI model predict what your baby might look like. No data collected, no photos stored — your privacy is our priority.</p>
+                <div class="hero-actions">
+                    <a href="#features" class="btn btn-primary">
+                        ✨ Explore Features
+                    </a>
+                    <a href="#privacy-policy" class="btn btn-secondary">
+                        🔒 Privacy Policy
+                    </a>
+                </div>
             </div>
-            <h1>See Your Future <span class="gradient-text">Baby's Face</span> with AI</h1>
-            <p>Upload parent photos and let our advanced Nanobana Pro AI model predict what your baby might look like. No data collected, no photos stored — your privacy is our priority.</p>
-            <div class="hero-actions">
-                <a href="#features" class="btn btn-primary">
-                    ✨ Explore Features
-                </a>
-                <a href="#privacy-policy" class="btn btn-secondary">
-                    🔒 Privacy Policy
-                </a>
+            
+            <div class="hero-image">
+                <img src="assets/hero_background.png" alt="Babylook AI Prediction Example" class="hero-showcase-img">
             </div>
         </div>
     </section>
@@ -966,7 +1016,7 @@
     <footer class="footer">
         <div class="footer-content">
             <a href="#" class="footer-logo">
-                <div class="footer-logo-icon">👶</div>
+                <img src="assets/logo.png" alt="Babylook Logo" class="footer-logo-img">
                 <span class="footer-logo-text">Babylook</span>
             </a>
             <div class="footer-links">

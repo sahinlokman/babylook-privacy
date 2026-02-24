@@ -969,8 +969,8 @@
             <div class="privacy-highlight reveal">
                 <div class="icon">🤖</div>
                 <h3>Secure AI Processing</h3>
-                <p>Photos are securely transmitted via HTTPS to our AI server for processing. No photos are used for AI
-                    training or shared with third parties.</p>
+                <p>Photos are securely transmitted via HTTPS to our AI service provider for processing. No photos are used for AI
+                    training or retained.</p>
             </div>
             <div class="privacy-highlight reveal">
                 <div class="icon">✅</div>
@@ -989,7 +989,7 @@
         </div>
 
         <div class="policy-container">
-            <p class="policy-date">Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: February 15, 2026</p>
+            <p class="policy-date">Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: February 24, 2026</p>
 
             <div class="policy-block reveal">
                 <h3><span class="emoji">📋</span> Introduction</h3>
@@ -1010,11 +1010,30 @@
                     <li>We do not use cookies or similar tracking technologies</li>
                     <li>We do not collect location data</li>
                     <li>We do not collect any personal identifiers</li>
-                    <li>Photos are transmitted to our AI server solely for portrait generation and are not permanently
-                        stored</li>
+                    <li><strong>Face Data:</strong> When you choose to generate a portrait, the two parent photos you
+                        select (which may contain face data) are temporarily transmitted to a third-party AI service
+                        provider solely for portrait generation. They are not permanently stored.</li>
                     <li>Generated portraits are stored locally on your device for up to 30 days, then automatically
                         deleted</li>
                 </ul>
+            </div>
+
+            <div class="policy-block reveal" id="face-data-collection">
+                <h3><span class="emoji">👤</span> Face Data Collection &amp; Usage</h3>
+                <p>Because Babylook uses parent photos that may contain facial data, we want to be fully transparent about how this sensitive data is handled:</p>
+                <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">What Face Data We Collect</h4>
+                <p>We collect the photos of the mother and father that you explicitly upload into the app. These photos may contain facial features (face data) of the individuals depicted.</p>
+                <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">How Face Data Is Collected</h4>
+                <p>Face data is collected exclusively through your deliberate action of selecting photos from your device's photo library within the app. We do not capture or access your camera, and we do not access any photos beyond those you explicitly select.</p>
+                <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">All Uses of Face Data</h4>
+                <ul>
+                    <li><strong>Portrait Generation Only:</strong> The sole purpose of collecting face data is to generate a fictional, AI-created image of what a baby might look like based on the facial traits of both parents.</li>
+                    <li><strong>No Identification or Tracking:</strong> Face data is never used for biometric identification, facial recognition, user profiling, or tracking of any kind.</li>
+                    <li><strong>No AI Training:</strong> Your photos and face data are never used to train, improve, fine-tune, or develop any AI models — by us or any third party.</li>
+                    <li><strong>No Secondary Use:</strong> Face data is not used for advertising, analytics, or any purpose other than generating the portrait you requested.</li>
+                </ul>
+                <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">User Consent</h4>
+                <p>Before any face data leaves your device, the app displays an explicit consent dialog that identifies what data will be sent, who it is sent to, and asks for your permission. You may decline at any time, in which case no data is transmitted.</p>
             </div>
 
             <div class="policy-block reveal">
@@ -1023,10 +1042,10 @@
                     your photos are processed:</p>
                 <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">How It Works</h4>
                 <ul>
-                    <li><strong>Photo Transmission:</strong> When you tap "Create Baby Portrait," the two parent photos
-                        you selected are sent to our external AI processing server for analysis and image generation.
+                    <li><strong>Photo Transmission:</strong> When you tap "Create Baby Portrait" and consent to processing, the two parent photos
+                        you selected are securely sent to our third-party AI service provider for analysis and image generation.
                     </li>
-                    <li><strong>AI Model:</strong> Our server uses an AI model to analyze facial features, skin tones,
+                    <li><strong>AI Model:</strong> Our service provider uses an AI model (Nanobana Pro) to analyze facial features, skin tones,
                         and proportions from both parent photos and generate a predicted baby portrait.</li>
                     <li><strong>Data Format:</strong> Photos are compressed and encoded before transmission to minimize
                         data usage.</li>
@@ -1036,14 +1055,13 @@
                 <ul>
                     <li><strong>Temporary Processing Only:</strong> Your photos are used solely for the purpose of
                         generating the baby portrait. They are processed in real-time and are not permanently stored on
-                        our servers.</li>
-                    <li><strong>No Training Use:</strong> Your photos are never used to train, improve, or develop AI
+                        our servers or the provider's servers.</li>
+                    <li><strong>No Training Use:</strong> Your photos and face data are never used to train, improve, or develop AI
                         models.</li>
                     <li><strong>Automatic Deletion:</strong> After the baby portrait is generated and delivered to your
-                        device, the parent photos and generated result are automatically removed from the processing
+                        device, the parent photos and generated result are automatically and immediately removed from the processing
                         server.</li>
-                    <li><strong>No Third-Party Sharing:</strong> Your photos are not shared with, sold to, or accessed
-                        by any third parties beyond what is necessary for image generation.</li>
+                    <li><strong>Retention Period:</strong> Face data (parent photos) is retained only for the duration of the single generation request — typically a matter of seconds to minutes — and is permanently deleted immediately upon delivery of the result. No face data is retained beyond this processing window.</li>
                 </ul>
             </div>
 
@@ -1069,9 +1087,7 @@
                 <h3><span class="emoji">🔗</span> Third-Party Services</h3>
                 <p>Our app uses the following third-party services:</p>
                 <ul>
-                    <li><strong>AI Processing Server</strong> — An external server is used to process parent photos and
-                        generate baby portraits using AI. Photos are transmitted securely and are not retained after
-                        processing.</li>
+                    <li><strong>Third-Party AI Service Provider (Image Generation)</strong> — The parent photos you provide (including face data) are securely transmitted to a third-party AI service provider that operates our Nanobana Pro AI model. This provider processes the photos exclusively to generate the requested baby portrait. The provider is contractually obligated to: (a) use the data only for this generation purpose, (b) not retain face data after processing is complete, (c) not use data for AI training, and (d) maintain at minimum the same level of privacy and security protections described in this policy. No face data is shared with any other third party.</li>
                     <li><strong>Apple App Store</strong> — For in-app purchases and subscription management. Apple's own
                         privacy policy applies to these transactions.</li>
                 </ul>

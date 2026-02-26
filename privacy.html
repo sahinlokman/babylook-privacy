@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Babylook</title>
+    <style>
+        :root {
+            --bg-color: #0f0b1a;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.4);
+            --gradient-1: linear-gradient(135deg, #FFE873 0%, #FFB6C1 100%);
+            --border: rgba(255, 255, 255, 0.08);
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --primary-light: #FFB6C1;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .policy-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-block h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gradient-1); /* Adjusted to make it brighter */
+        }
+        
+        /* Specific header colors for sub-sections */
+        .policy-block h4 {
+            color: var(--primary-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .policy-block p,
+        .policy-block li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .policy-block ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.75rem;
+        }
+
+        .policy-block ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .policy-block ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Privacy Policy</h1>
+        <p>Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: February 26, 2026</p>
+    </div>
+
+    <div class="policy-block">
+        <h3>📋 Introduction</h3>
+        <p>Welcome to Babylook ("we," "our," or "us"). Babylook is an AI-powered mobile application that generates predictions of what a baby might look like based on parent photos. This Privacy Policy explains how we handle your information when you use our mobile application.</p>
+        <p style="margin-top: 0.75rem;">By using Babylook, you agree to the terms of this privacy policy. If you do not agree with the terms, please do not access the application.</p>
+    </div>
+
+    <div class="policy-block">
+        <h3>📊 Information We Collect</h3>
+        <p>Babylook is designed with privacy in mind. We minimize data collection to only what is strictly necessary for the app to function:</p>
+        <ul>
+            <li>We do not collect usage analytics or tracking data</li>
+            <li>We do not collect device information beyond what is listed below</li>
+            <li>We do not use cookies or similar tracking technologies</li>
+            <li>We do not collect location data</li>
+            <li><strong>Anonymous Installation Identifier:</strong> We generate a random, anonymous per-device identifier (install ID) stored locally on your device. This identifier is used solely for rate limiting API requests and is not linked to your identity, Apple ID, or any personal information.</li>
+            <li><strong>Face Data (Parent Photos):</strong> When you choose to generate a portrait, the two parent photos you select (which may contain face data) are temporarily transmitted through Cloudflare Workers to CreativeLabs for portrait generation. They are not permanently stored.</li>
+            <li><strong>Text Prompt:</strong> A text prompt describing the generation request is sent alongside your photos.</li>
+            <li>Generated portraits are stored locally on your device for up to 30 days, then automatically deleted</li>
+        </ul>
+    </div>
+
+    <div class="policy-block">
+        <h3>👤 Face Data Collection & Usage</h3>
+        <p>Because Babylook uses parent photos that may contain facial data, we want to be fully transparent about how this sensitive data is handled:</p>
+        
+        <h4>What Face Data We Collect</h4>
+        <p>We collect the photos of the mother and father that you explicitly upload into the app. These photos may contain facial features (face data) of the individuals depicted.</p>
+        
+        <h4>How Face Data Is Collected</h4>
+        <p>Face data is collected exclusively through your deliberate action of selecting photos from your device's photo library within the app. We do not capture or access your camera, and we do not access any photos beyond those you explicitly select.</p>
+        
+        <h4>All Uses of Face Data</h4>
+        <ul>
+            <li><strong>Portrait Generation Only:</strong> The sole purpose of collecting face data is to generate a fictional, AI-created image of what a baby might look like based on the facial traits of both parents.</li>
+            <li><strong>No Identification or Tracking:</strong> Face data is never used for biometric identification, facial recognition, user profiling, or tracking of any kind.</li>
+            <li><strong>No AI Training:</strong> Your photos and face data are never used to train, improve, fine-tune, or develop any AI models — by us or any third party.</li>
+            <li><strong>No Secondary Use:</strong> Face data is not used for advertising, analytics, or any purpose other than generating the portrait you requested.</li>
+        </ul>
+        
+        <h4>User Consent</h4>
+        <p>Before any face data leaves your device, the app displays an explicit consent dialog that identifies what data will be sent, who it is sent to (CreativeLabs via Cloudflare Workers), and asks for your permission. You may decline at any time, in which case no data is transmitted. You can also revoke consent at any time from Settings → Privacy & Consent.</p>
+    </div>
+
+    <div class="policy-block">
+        <h3>🤖 Image Generation and AI Processing</h3>
+        <p>Babylook uses artificial intelligence (AI) to generate baby face predictions. Here is exactly how your photos are processed:</p>
+        
+        <h4>How It Works</h4>
+        <ul>
+            <li><strong>Photo Transmission:</strong> When you tap "Create Baby Portrait" and consent to processing, the two parent photos you selected are securely sent through Cloudflare Workers (proxy/CDN) to CreativeLabs (AI image generation provider) for analysis and image generation.</li>
+            <li><strong>AI Model:</strong> CreativeLabs uses an AI model (Nanobana Pro) to analyze facial features, skin tones, and proportions from both parent photos and generate a predicted baby portrait.</li>
+            <li><strong>Data Format:</strong> Photos are compressed and encoded before transmission to minimize data usage.</li>
+            <li><strong>Additional Data:</strong> Along with your photos, a text prompt and an anonymous installation identifier (for rate limiting only) are also transmitted.</li>
+        </ul>
+        
+        <h4>Data Handling During Processing</h4>
+        <ul>
+            <li><strong>Temporary Processing Only:</strong> Your photos are used solely for the purpose of generating the baby portrait. They are processed in real-time and are not permanently stored on our servers or the provider's servers.</li>
+            <li><strong>No Training Use:</strong> Your photos and face data are never used to train, improve, or develop AI models.</li>
+            <li><strong>Automatic Deletion:</strong> After the baby portrait is generated and delivered to your device, the parent photos and generated result are automatically and immediately removed from the processing server.</li>
+            <li><strong>Retention Period:</strong> Face data (parent photos) is retained only for the duration of the single generation request — typically a matter of seconds to minutes — and is permanently deleted immediately upon delivery of the result. No face data is retained beyond this processing window.</li>
+        </ul>
+    </div>
+
+    <div class="policy-block">
+        <h3>⚠️ AI-Generated Content Disclaimer</h3>
+        <p>All baby portraits generated by Babylook are artistic AI interpretations. They are for entertainment purposes only and do not represent actual predictions of a child's appearance. Results may not reflect real-world genetics or actual baby appearance.</p>
+    </div>
+
+    <div class="policy-block">
+        <h3>🔐 Data Security</h3>
+        <p>We take the security of your data seriously:</p>
+        <ul>
+            <li>All photo transmissions use HTTPS encryption to protect data in transit</li>
+            <li>Photos are processed in isolated, temporary sessions</li>
+            <li>Generated images are stored only on your local device under your control</li>
+            <li>Local generation history is automatically purged after 30 days</li>
+        </ul>
+    </div>
+
+    <div class="policy-block">
+        <h3>🔗 Third-Party Services</h3>
+        <p>Our app uses the following third-party services:</p>
+        <ul>
+            <li><strong>CreativeLabs (AI Image Generation)</strong> — The parent photos you provide (including face data), text prompt, and anonymous install identifier are securely transmitted to CreativeLabs, which operates the Nanobana Pro AI model used to generate baby portraits. CreativeLabs processes the photos exclusively to generate the requested portrait. The provider is contractually obligated to: (a) use the data only for this generation purpose, (b) not retain face data after processing is complete, (c) not use data for AI training, and (d) maintain at minimum the same level of privacy and security protections described in this policy.</li>
+            <li><strong>Cloudflare Workers (Proxy/CDN)</strong> — All API requests from the app are routed through Cloudflare Workers, which acts as a secure proxy. Cloudflare handles request routing and rate limiting but does not store your photos or face data.</li>
+            <li><strong>Apple App Store</strong> — For in-app purchases and subscription management. Apple's own privacy policy applies to these transactions.</li>
+        </ul>
+        <p style="margin-top: 0.75rem;">No face data is shared with any other third party beyond those listed above. We encourage you to review Apple's privacy policy for information on how they handle your data.</p>
+    </div>
+
+    <div class="policy-block">
+        <h3>👶 Children's Privacy</h3>
+        <p>Babylook is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and have concerns, please contact us using the information provided below.</p>
+    </div>
+
+    <div class="policy-block">
+        <h3>⚖️ Your Rights</h3>
+        <p>You have the following rights regarding your data:</p>
+        <ul>
+            <li><strong>Consent:</strong> You can choose not to use the generation feature, in which case no photos will be transmitted</li>
+            <li><strong>Revoke Consent:</strong> You can revoke your face data consent at any time from Settings → Privacy & Consent within the app. After revoking, BabyLook will ask for your permission again before sending any photos for AI processing.</li>
+            <li><strong>Local Data:</strong> You can delete your local generation history at any time through the app</li>
+            <li><strong>Contact:</strong> You may contact us at any time with questions about your data</li>
+        </ul>
+    </div>
+
+    <div class="policy-block">
+        <h3>🔄 Changes to This Policy</h3>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+    </div>
+
+    <div class="policy-block">
+        <h3>📧 Contact Us</h3>
+        <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us:</p>
+        <p style="margin-top: 1rem;">
+            <strong>Email:</strong> <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a>
+        </p>
+        <p style="margin-top: 0.5rem;">We will respond to your inquiry as soon as possible.</p>
+    </div>
+
+    <div class="footer">
+        © 2026 Babylook. All rights reserved.
+    </div>
+</div>
+
+</body>
+</html>

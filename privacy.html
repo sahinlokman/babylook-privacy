@@ -123,128 +123,59 @@
 <div class="container">
     <div class="header">
         <h1>Privacy Policy</h1>
-        <p>Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: February 26, 2026</p>
+        <p>Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: September 14, 2026</p>
     </div>
 
     <div class="policy-block">
-        <h3>📋 Introduction</h3>
-        <p>Welcome to Babylook ("we," "our," or "us"). Babylook is an AI-powered mobile application that generates predictions of what a baby might look like based on parent photos. This Privacy Policy explains how we handle your information when you use our mobile application.</p>
-        <p style="margin-top: 0.75rem;">By using Babylook, you agree to the terms of this privacy policy. If you do not agree with the terms, please do not access the application.</p>
+        <h3>Introduction</h3>
+        <p>BabyLook is operated by Lokman Şahin. It creates fictional baby portraits from two selected parent photos for entertainment, not genetic or medical predictions. This policy explains the information used by the current BabyLook app and its service providers.</p>
     </div>
-
     <div class="policy-block">
-        <h3>📊 Information We Collect</h3>
-        <p>Babylook is designed with privacy in mind. We minimize data collection to only what is strictly necessary for the app to function:</p>
+        <h3>Photos, Face Data and Consent</h3>
+        <p>Only the two photos you select are used for a generation request. They may contain facial features. Please select photos only with the permission of the people depicted. BabyLook does not scan your entire photo library.</p>
+        <p>Before uploading, the app asks for explicit consent. Your selected photos and a text prompt are sent over HTTPS through BabyLook’s server hosted on Oracle Cloud in Frankfurt, Germany, to Snapgen, using the Nano Banana 2 model. Snapgen receives the reference photos and prompt to generate your requested portrait. The app downloads the completed image from the result URL provided by Snapgen.</p>
+        <p>BabyLook uses these photos to fulfill your portrait request. We do not use them for biometric identification, tracking, advertising or our own model training. We have not verified a provider-wide no-training commitment from Snapgen and cannot promise that all downstream providers exclude training or other secondary processing. Do not submit photos if you do not accept this uncertainty.</p>
+        <p>You can decline or revoke photo-processing consent in Settings → Privacy &amp; Consent. Revocation prevents future uploads until you consent again; it does not cancel an already submitted request or automatically erase provider-held data.</p>
+    </div>
+    <div class="policy-block">
+        <h3>Identifiers, Subscriptions and Technical Data</h3>
         <ul>
-            <li>We do not collect usage analytics or tracking data</li>
-            <li>We do not collect device information beyond what is listed below</li>
-            <li>We do not use cookies or similar tracking technologies</li>
-            <li>We do not collect location data</li>
-            <li><strong>Anonymous Installation Identifier:</strong> We generate a random, anonymous per-device identifier (install ID) stored locally on your device. This identifier is used solely for rate limiting API requests and is not linked to your identity, Apple ID, or any personal information.</li>
-            <li><strong>Face Data (Parent Photos):</strong> When you choose to generate a portrait, the two parent photos you select (which may contain face data) are temporarily transmitted through Cloudflare Workers to CreativeLabs for portrait generation. They are not permanently stored.</li>
-            <li><strong>Text Prompt:</strong> A text prompt describing the generation request is sent alongside your photos.</li>
-            <li>Generated portraits are stored locally on your device for up to 30 days, then automatically deleted</li>
+            <li><strong>Installation identifier:</strong> A random installation ID is stored on your device and sent to the BabyLook backend to limit request frequency. It is also used as your app user ID in RevenueCat to associate purchases and subscription access. It is a pseudonymous identifier; purchase information can be associated with it. The BabyLook backend does not forward this ID in its Snapgen generation request.</li>
+            <li><strong>RevenueCat:</strong> We use RevenueCat to load subscription offers, process and restore purchases, and determine premium access. RevenueCat processes the installation ID, purchase receipts and transaction/subscription information, and technical information such as device and operating-system details. BabyLook does not send parent photos or generated portraits to RevenueCat.</li>
+            <li><strong>Apple:</strong> Apple processes App Store payments and purchase records. BabyLook does not receive your payment-card details.</li>
+            <li><strong>Network and support data:</strong> Service providers necessarily process network information, including IP addresses, to deliver requests. If you email support, we receive your email address and the information you include.</li>
+        </ul>
+        <p>BabyLook does not implement advertising tracking or request precise location data. Subscription and operational data described above are still processed to operate the service.</p>
+    </div>
+    <div class="policy-block">
+        <h3>Retention and Deletion</h3>
+        <ul>
+            <li><strong>BabyLook proxy:</strong> The Oracle-hosted proxy handles photo and prompt contents in memory while forwarding a request. Its application code does not write reference photos, prompts or generated portraits to persistent storage. This does not describe Snapgen’s storage.</li>
+            <li><strong>Snapgen:</strong> Snapgen may retain generation history, reference images, prompts and generated portraits under its own processing policies. We have not verified an exact retention period or an automatic deletion deadline. We do not promise immediate deletion when a result is delivered.</li>
+            <li><strong>On your device:</strong> Generation history is stored locally. The app attempts to remove records older than 30 days when its history cleanup runs; this is not a guaranteed background deletion deadline. You can clear local history in the app. Images you separately save to Photos or share remain under your control and must be deleted separately.</li>
+            <li><strong>Subscription records:</strong> Apple and RevenueCat retain records needed to provide and restore subscriptions and meet applicable obligations. Clearing local history or revoking photo consent does not delete purchase records or cancel a subscription.</li>
+            <li><strong>Deletion requests:</strong> Contact <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a> to request access, correction or deletion, including assistance with provider-held data. Include the approximate generation or purchase date; do not resend face photos. We will identify the relevant records with you and coordinate applicable requests with providers. We cannot promise a provider deletion deadline that has not been confirmed.</li>
         </ul>
     </div>
-
     <div class="policy-block">
-        <h3>👤 Face Data Collection & Usage</h3>
-        <p>Because Babylook uses parent photos that may contain facial data, we want to be fully transparent about how this sensitive data is handled:</p>
-        
-        <h4>What Face Data We Collect</h4>
-        <p>We collect the photos of the mother and father that you explicitly upload into the app. These photos may contain facial features (face data) of the individuals depicted.</p>
-        
-        <h4>How Face Data Is Collected</h4>
-        <p>Face data is collected exclusively through your deliberate action of selecting photos from your device's photo library within the app. We do not capture or access your camera, and we do not access any photos beyond those you explicitly select.</p>
-        
-        <h4>All Uses of Face Data</h4>
-        <ul>
-            <li><strong>Portrait Generation Only:</strong> The sole purpose of collecting face data is to generate a fictional, AI-created image of what a baby might look like based on the facial traits of both parents.</li>
-            <li><strong>No Identification or Tracking:</strong> Face data is never used for biometric identification, facial recognition, user profiling, or tracking of any kind.</li>
-            <li><strong>No AI Training:</strong> Your photos and face data are never used to train, improve, fine-tune, or develop any AI models — by us or any third party.</li>
-            <li><strong>No Secondary Use:</strong> Face data is not used for advertising, analytics, or any purpose other than generating the portrait you requested.</li>
-        </ul>
-        
-        <h4>User Consent</h4>
-        <p>Before any face data leaves your device, the app displays an explicit consent dialog that identifies what data will be sent, who it is sent to (CreativeLabs via Cloudflare Workers), and asks for your permission. You may decline at any time, in which case no data is transmitted. You can also revoke consent at any time from Settings → Privacy & Consent.</p>
+        <h3>Service Providers and International Processing</h3>
+        <p>Oracle Cloud hosts the BabyLook proxy in Frankfurt. Snapgen provides AI generation using Nano Banana 2 and supplies result-download URLs. Processing and storage by Snapgen and its infrastructure may occur outside Germany; a Frankfurt proxy does not guarantee that all processing remains in the EU.</p>
+        <p>RevenueCat provides subscription infrastructure and processes customer data on infrastructure in the United States. Its end-user processing is governed by its service agreements. See <a href="https://www.revenuecat.com/privacy">RevenueCat’s privacy information</a> and <a href="https://www.revenuecat.com/dpa">data processing addendum</a>. Apple handles purchases under <a href="https://www.apple.com/legal/privacy/data/en/app-store/">Apple’s App Store privacy information</a>.</p>
+        <p>The current app’s photo generation route uses Oracle Cloud and Snapgen. It does not use the former Cloudflare Workers / CreativeLabs route.</p>
     </div>
-
     <div class="policy-block">
-        <h3>🤖 Image Generation and AI Processing</h3>
-        <p>Babylook uses artificial intelligence (AI) to generate baby face predictions. Here is exactly how your photos are processed:</p>
-        
-        <h4>How It Works</h4>
-        <ul>
-            <li><strong>Photo Transmission:</strong> When you tap "Create Baby Portrait" and consent to processing, the two parent photos you selected are securely sent through Cloudflare Workers (proxy/CDN) to CreativeLabs (AI image generation provider) for analysis and image generation.</li>
-            <li><strong>AI Model:</strong> CreativeLabs uses an AI model (Nanobana Pro) to analyze facial features, skin tones, and proportions from both parent photos and generate a predicted baby portrait.</li>
-            <li><strong>Data Format:</strong> Photos are compressed and encoded before transmission to minimize data usage.</li>
-            <li><strong>Additional Data:</strong> Along with your photos, a text prompt and an anonymous installation identifier (for rate limiting only) are also transmitted.</li>
-        </ul>
-        
-        <h4>Data Handling During Processing</h4>
-        <ul>
-            <li><strong>Temporary Processing Only:</strong> Your photos are used solely for the purpose of generating the baby portrait. They are processed in real-time and are not permanently stored on our servers or the provider's servers.</li>
-            <li><strong>No Training Use:</strong> Your photos and face data are never used to train, improve, or develop AI models.</li>
-            <li><strong>Automatic Deletion:</strong> After the baby portrait is generated and delivered to your device, the parent photos and generated result are automatically and immediately removed from the processing server.</li>
-            <li><strong>Retention Period:</strong> Face data (parent photos) is retained only for the duration of the single generation request — typically a matter of seconds to minutes — and is permanently deleted immediately upon delivery of the result. No face data is retained beyond this processing window.</li>
-        </ul>
+        <h3>Security and Your Choices</h3>
+        <p>Photo uploads use HTTPS. Provider credentials remain on the backend rather than in the app. No system can guarantee absolute security.</p>
+        <p>You may choose not to generate portraits, revoke upload consent, clear local history, and request access, correction or deletion by contacting us. Depending on your location, you may also have rights to restrict or object to processing, obtain a copy of your data, or complain to a data-protection authority. Manage or cancel subscriptions through your Apple account’s subscription settings.</p>
     </div>
-
     <div class="policy-block">
-        <h3>⚠️ AI-Generated Content Disclaimer</h3>
-        <p>All baby portraits generated by Babylook are artistic AI interpretations. They are for entertainment purposes only and do not represent actual predictions of a child's appearance. Results may not reflect real-world genetics or actual baby appearance.</p>
+        <h3>Children’s Privacy</h3>
+        <p>BabyLook is not intended for children under 13. We do not knowingly collect personal information from children under 13. Contact us if you believe a child has submitted personal information so we can investigate and address the relevant records.</p>
     </div>
-
     <div class="policy-block">
-        <h3>🔐 Data Security</h3>
-        <p>We take the security of your data seriously:</p>
-        <ul>
-            <li>All photo transmissions use HTTPS encryption to protect data in transit</li>
-            <li>Photos are processed in isolated, temporary sessions</li>
-            <li>Generated images are stored only on your local device under your control</li>
-            <li>Local generation history is automatically purged after 30 days</li>
-        </ul>
-    </div>
-
-    <div class="policy-block">
-        <h3>🔗 Third-Party Services</h3>
-        <p>Our app uses the following third-party services:</p>
-        <ul>
-            <li><strong>CreativeLabs (AI Image Generation)</strong> — The parent photos you provide (including face data), text prompt, and anonymous install identifier are securely transmitted to CreativeLabs, which operates the Nanobana Pro AI model used to generate baby portraits. CreativeLabs processes the photos exclusively to generate the requested portrait. The provider is contractually obligated to: (a) use the data only for this generation purpose, (b) not retain face data after processing is complete, (c) not use data for AI training, and (d) maintain at minimum the same level of privacy and security protections described in this policy.</li>
-            <li><strong>Cloudflare Workers (Proxy/CDN)</strong> — All API requests from the app are routed through Cloudflare Workers, which acts as a secure proxy. Cloudflare handles request routing and rate limiting but does not store your photos or face data.</li>
-            <li><strong>Apple App Store</strong> — For in-app purchases and subscription management. Apple's own privacy policy applies to these transactions.</li>
-        </ul>
-        <p style="margin-top: 0.75rem;">No face data is shared with any other third party beyond those listed above. We encourage you to review Apple's privacy policy for information on how they handle your data.</p>
-    </div>
-
-    <div class="policy-block">
-        <h3>👶 Children's Privacy</h3>
-        <p>Babylook is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and have concerns, please contact us using the information provided below.</p>
-    </div>
-
-    <div class="policy-block">
-        <h3>⚖️ Your Rights</h3>
-        <p>You have the following rights regarding your data:</p>
-        <ul>
-            <li><strong>Consent:</strong> You can choose not to use the generation feature, in which case no photos will be transmitted</li>
-            <li><strong>Revoke Consent:</strong> You can revoke your face data consent at any time from Settings → Privacy & Consent within the app. After revoking, BabyLook will ask for your permission again before sending any photos for AI processing.</li>
-            <li><strong>Local Data:</strong> You can delete your local generation history at any time through the app</li>
-            <li><strong>Contact:</strong> You may contact us at any time with questions about your data</li>
-        </ul>
-    </div>
-
-    <div class="policy-block">
-        <h3>🔄 Changes to This Policy</h3>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
-    </div>
-
-    <div class="policy-block">
-        <h3>📧 Contact Us</h3>
-        <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us:</p>
-        <p style="margin-top: 1rem;">
-            <strong>Email:</strong> <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a>
-        </p>
-        <p style="margin-top: 0.5rem;">We will respond to your inquiry as soon as possible.</p>
+        <h3>Changes and Contact</h3>
+        <p>We update this page when our data practices change and show the latest update date. Material changes to photo processing are reflected in the app’s consent notice.</p>
+        <p>For privacy questions or requests, contact Lokman Şahin at <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a>.</p>
     </div>
 
     <div class="footer">

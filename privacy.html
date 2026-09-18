@@ -123,7 +123,7 @@
 <div class="container">
     <div class="header">
         <h1>Privacy Policy</h1>
-        <p>Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: September 14, 2026</p>
+        <p>Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: September 18, 2026</p>
     </div>
 
     <div class="policy-block">
@@ -141,6 +141,7 @@
         <h3>Identifiers, Subscriptions and Technical Data</h3>
         <ul>
             <li><strong>Installation identifier:</strong> A random installation ID is stored on your device and sent to the BabyLook backend to limit request frequency. It is also used as your app user ID in RevenueCat to associate purchases and subscription access. It is a pseudonymous identifier; purchase information can be associated with it. The BabyLook backend does not forward this ID in its Snapgen generation request.</li>
+            <li><strong>Server subscription and usage verification:</strong> For generation requests, BabyLook sends Apple-signed app and subscription transaction proofs to its server. The server verifies the app/account binding and asks Apple for current subscription status. It stores a hashed account identifier, request identifiers, generation reservation timestamps and task responses to enforce the rolling 7-day allowance and prevent duplicate charges. These records remain linked to the app account even though the raw account identifier is not stored. Task identifiers may associate provider-held generation data with the usage record. They are not used for advertising tracking.</li>
             <li><strong>RevenueCat:</strong> We use RevenueCat to load subscription offers, process and restore purchases, and determine premium access. RevenueCat processes the installation ID, purchase receipts and transaction/subscription information, and technical information such as device and operating-system details. BabyLook does not send parent photos or generated portraits to RevenueCat.</li>
             <li><strong>Apple:</strong> Apple processes App Store payments and purchase records. BabyLook does not receive your payment-card details.</li>
             <li><strong>Network and support data:</strong> Service providers necessarily process network information, including IP addresses, to deliver requests. If you email support, we receive your email address and the information you include.</li>
@@ -153,6 +154,7 @@
             <li><strong>BabyLook proxy:</strong> The Oracle-hosted proxy handles photo and prompt contents in memory while forwarding a request. Its application code does not write reference photos, prompts or generated portraits to persistent storage. This does not describe Snapgen’s storage.</li>
             <li><strong>Snapgen:</strong> Snapgen may retain generation history, reference images, prompts and generated portraits under its own processing policies. We have not verified an exact retention period or an automatic deletion deadline. We do not promise immediate deletion when a result is delivered.</li>
             <li><strong>On your device:</strong> Generation history is stored locally. The app attempts to remove records older than 30 days when its history cleanup runs; this is not a guaranteed background deletion deadline. You can clear local history in the app. Images you separately save to Photos or share remain under your control and must be deleted separately.</li>
+            <li><strong>Generation usage records:</strong> Usage reservations older than 7 days are removed when the server next processes a new generation reservation. This is not a guaranteed background deletion deadline. Failed or interrupted requests may still count if the provider may have accepted the work. Clearing local photos/history or reinstalling the app does not reset server usage records. Apple Sandbox test records are kept separately from live purchase records.</li>
             <li><strong>Subscription records:</strong> Apple and RevenueCat retain records needed to provide and restore subscriptions and meet applicable obligations. Clearing local history or revoking photo consent does not delete purchase records or cancel a subscription.</li>
             <li><strong>Deletion requests:</strong> Contact <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a> to request access, correction or deletion, including assistance with provider-held data. Include the approximate generation or purchase date; do not resend face photos. We will identify the relevant records with you and coordinate applicable requests with providers. We cannot promise a provider deletion deadline that has not been confirmed.</li>
         </ul>

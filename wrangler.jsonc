@@ -1,0 +1,25 @@
+{
+  // Deploys this repository to the Cloudflare Worker that serves
+  // https://babylookapp.com as static assets.
+  //
+  // Cloudflare Workers Builds runs the build command (see below) and then
+  // `npx wrangler deploy` on every push to main.
+  //
+  // The site files live at the repository root because GitHub Pages also
+  // serves this repo from the root. The build step copies just the public
+  // files into dist/ so that repo-only files (README.md, _config.yml,
+  // .nojekyll, this config) are never published to babylookapp.com.
+  //
+  // Build command: npm run build
+  "name": "babylook",
+  "compatibility_date": "2026-11-04",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist"
+  },
+  // Declared explicitly so a deploy never drops the custom domains.
+  "routes": [
+    { "pattern": "babylookapp.com", "custom_domain": true },
+    { "pattern": "www.babylookapp.com", "custom_domain": true }
+  ]
+}

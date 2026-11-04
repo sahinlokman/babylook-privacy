@@ -1,0 +1,8 @@
+{
+  "name": "babylook-site",
+  "private": true,
+  "description": "Static site for babylookapp.com (also served by GitHub Pages from the repository root)",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp index.html privacy.html dist/ && cp -R assets dist/assets"
+  }
+}

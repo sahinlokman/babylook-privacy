@@ -1,6 +1,7 @@
 # babylook-privacy
 
-Marketing site and privacy policy for BabyLook, the AI baby face prediction app.
+Marketing site and privacy policy for BabyLook, the iPhone and iPad app for
+artistic AI baby portraits and an on-device Baby Journal.
 
 ## Where this repo is published
 
@@ -16,8 +17,13 @@ GitHub Pages serves the repository root, which is why the HTML and
 
 ## Pages
 
-- `index.html` — landing page, with the privacy policy inlined
+- `index.html` — single-page landing page (portraits, Baby Journal,
+  screenshots, pricing, privacy summary, FAQ). It shows only a short privacy
+  summary and links to `privacy.html` for the full policy.
 - `privacy.html` — standalone privacy policy
+- `assets/` — logo and compressed JPEG screenshots (`shot-*.jpg` for iPhone,
+  `ipad-*.jpg` for iPad), exported from the App Store screenshots with
+  `sips -s format jpeg -s formatOptions 80 -Z 900`
 
 On babylookapp.com, `/privacy.html` redirects to the clean URL `/privacy`.
 
@@ -42,8 +48,15 @@ npx wrangler deploy --dry-run
 
 ## Updating the privacy policy
 
-The policy text appears in **both** `index.html` and `privacy.html`. Update
-both, and bump the "Last Updated" date in each.
+The full policy text lives only in `privacy.html`. It mirrors the canonical
+policy the app links to, https://appterms.site/babylook/privacy/ (source:
+`legal-site/babylook/privacy/index.html`), plus a Baby Journal paragraph.
+When the canonical policy changes, update `privacy.html` to match and bump its
+"Updated" date.
 
-The iOS app links to the published policy, so changes here are
-user-facing as soon as they are pushed.
+`index.html` contains only a short privacy summary (in the `#privacy`
+section and the FAQ). Check that it still agrees with `privacy.html` and does
+not promise more than the policy does.
+
+The iOS app links to the appterms.site policy; this site's copy is
+user-facing as soon as it is pushed.

@@ -1,189 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Babylook</title>
-    <style>
-        :root {
-            --bg-color: #0f0b1a;
-            --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.7);
-            --text-muted: rgba(255, 255, 255, 0.4);
-            --gradient-1: linear-gradient(135deg, #FFE873 0%, #FFB6C1 100%);
-            --border: rgba(255, 255, 255, 0.08);
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --primary-light: #FFB6C1;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .policy-block {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .policy-block h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--gradient-1); /* Adjusted to make it brighter */
-        }
-        
-        /* Specific header colors for sub-sections */
-        .policy-block h4 {
-            color: var(--primary-light);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .policy-block p,
-        .policy-block li {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        .policy-block ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 0.75rem;
-        }
-
-        .policy-block ul li {
-            padding: 0.4rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .policy-block ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #FFFFFF;
-            font-weight: 700;
-        }
-
-        a {
-            color: var(--primary-light);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy – BabyLook</title>
+  <meta name="description" content="How BabyLook handles parent photos, AI processing, on-device Baby Journal data and subscriptions.">
+  <meta name="theme-color" content="#DF4A6E">
+  <link rel="canonical" href="https://babylookapp.com/privacy">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent: #DF4A6E; --accent-strong: #B82D53; --ink: #2C2428; --ink-soft: #5E5157; --blush: #FFF5F6; --line: #F2D6DD; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 17px; line-height: 1.65; color: var(--ink); background: var(--blush); overflow-x: hidden; }
+    a { color: var(--accent-strong); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    header { border-bottom: 1px solid var(--line); background: #fff; }
+    .bar { max-width: 800px; margin: 0 auto; padding: 0 16px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .brand img { width: 34px; height: 34px; border-radius: 10px; }
+    .back { font-weight: 800; text-decoration: none; }
+    main { max-width: 800px; margin: 0 auto; padding: 40px 16px 64px; }
+    h1 { font-size: clamp(2rem, 6vw, 2.6rem); line-height: 1.15; margin: 0 0 8px; font-weight: 900; }
+    h2 { font-size: 1.3rem; margin: 32px 0 8px; font-weight: 900; }
+    .meta { color: var(--ink-soft); margin: 0 0 24px; }
+    .note { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 14px; padding: 14px 16px; color: var(--ink-soft); }
+    section { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 4px 20px 16px; margin-top: 16px; }
+    section p { margin: 0 0 10px; }
+    footer { max-width: 800px; margin: 0 auto; padding: 0 16px 48px; color: var(--ink-soft); font-size: .95rem; }
+    footer a { font-weight: 700; }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="bar">
+      <a class="brand" href="./"><img src="assets/logo.png" alt="" width="34" height="34">BabyLook</a>
+      <a class="back" href="./">← Back to home</a>
+    </div>
+  </header>
+  <main>
+    <h1>BabyLook Privacy Policy</h1>
+    <p class="meta">Policy text updated 15 October 2026; Baby Journal section added 7 November 2026. This document covers BabyLook only.<br>Contact: <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a></p>
+    <p class="note">This page mirrors the policy linked from the app, with an added Baby Journal section describing on-device journal data. The canonical version is published at <a href="https://appterms.site/babylook/privacy/">appterms.site/babylook/privacy/</a>; if the two ever differ, the canonical version applies.</p>
 
-<div class="container">
-    <div class="header">
-        <h1>Privacy Policy</h1>
-        <p>Effective Date: February 15, 2026 &nbsp;|&nbsp; Last Updated: October 1, 2026</p>
-    </div>
+    <section>
+      <h2>Photos and AI processing</h2>
+      <p>BabyLook sends the two selected reference photos (which may contain face data) and the requested portrait prompt through its Oracle-hosted backend in Frankfurt to Snapgen, using Nano Banana 2. Growing-up portraits use the revealed child portrait as reference. Processing occurs only after your explicit consent. The result is an artistic simulation, not a genetic or medical prediction.</p>
+      <p>Snapgen may retain reference images, prompts, generation history and output images. Its exact retention period and provider-wide no-training commitment have not been verified. Immediate deletion is not guaranteed. Revoking consent stops future uploads; it does not erase data already held by providers.</p>
+    </section>
 
-    <div class="policy-block">
-        <h3>Introduction</h3>
-        <p>BabyLook is operated by Lokman Şahin. It creates fictional baby portraits from two selected parent photos for entertainment, not genetic or medical predictions. This policy explains the information used by the current BabyLook app and its service providers.</p>
-    </div>
-    <div class="policy-block">
-        <h3>Photos, Face Data and Consent</h3>
-        <p>Only the two photos you select are used for a generation request. They may contain facial features. Please select photos only with the permission of the people depicted. BabyLook does not scan your entire photo library.</p>
-        <p>Before uploading, the app asks for explicit consent. Your selected photos and a text prompt are sent over HTTPS through BabyLook’s server hosted on Oracle Cloud in Frankfurt, Germany, to Snapgen, using the Nano Banana 2 model. Snapgen receives the reference photos and prompt to generate your requested portrait. The app downloads the completed image from the result URL provided by Snapgen.</p>
-        <p>BabyLook uses these photos to fulfill your portrait request. We do not use them for biometric identification, tracking, advertising or our own model training. We have not verified a provider-wide no-training commitment from Snapgen and cannot promise that all downstream providers exclude training or other secondary processing. Do not submit photos if you do not accept this uncertainty.</p>
-        <p>You can decline or revoke photo-processing consent in Settings → Privacy &amp; Consent. Revocation prevents future uploads until you consent again; it does not cancel an already submitted request or automatically erase provider-held data.</p>
-    </div>
-    <div class="policy-block">
-        <h3>Identifiers, Subscriptions and Technical Data</h3>
-        <ul>
-            <li><strong>Installation identifier:</strong> A random installation ID is stored on your device and sent to the BabyLook backend to limit request frequency. It is also used as your app user ID in RevenueCat to associate purchases and subscription access. It is a pseudonymous identifier; purchase information can be associated with it. The BabyLook backend does not forward this ID in its Snapgen generation request.</li>
-            <li><strong>Server subscription and usage verification:</strong> For generation requests, BabyLook sends Apple-signed app and subscription transaction proofs to its server. The server verifies the app/account binding and asks Apple for current subscription status. It stores a hashed account identifier, request identifiers, generation reservation timestamps and task responses to enforce the rolling 7-day paid allowance, the one-time Basic trial portrait limit, and prevent duplicate charges. These records remain linked to the app account even though the raw account identifier is not stored. Task identifiers may associate provider-held generation data with the usage record. They are not used for advertising tracking.</li>
-            <li><strong>RevenueCat:</strong> We use RevenueCat to load subscription offers, process and restore purchases, and determine premium access. RevenueCat processes the installation ID, purchase receipts and transaction/subscription information, and technical information such as device and operating-system details. BabyLook does not send parent photos or generated portraits to RevenueCat.</li>
-            <li><strong>Apple:</strong> Apple processes App Store payments and purchase records. BabyLook does not receive your payment-card details.</li>
-            <li><strong>Network and support data:</strong> Service providers necessarily process network information, including IP addresses, to deliver requests. If you email support, we receive your email address and the information you include.</li>
-        </ul>
-        <p>BabyLook does not implement advertising tracking or request precise location data. Subscription and operational data described above are still processed to operate the service.</p>
-    </div>
-    <div class="policy-block">
-        <h3>Retention and Deletion</h3>
-        <ul>
-            <li><strong>BabyLook proxy:</strong> The Oracle-hosted proxy handles photo and prompt contents in memory while forwarding a request. Its application code does not write reference photos, prompts or generated portraits to persistent storage. This does not describe Snapgen’s storage.</li>
-            <li><strong>Snapgen:</strong> Snapgen may retain generation history, reference images, prompts and generated portraits under its own processing policies. We have not verified an exact retention period or an automatic deletion deadline. We do not promise immediate deletion when a result is delivered.</li>
-            <li><strong>On your device:</strong> Generation history is stored locally. The app attempts to remove records older than 30 days when its history cleanup runs; this is not a guaranteed background deletion deadline. You can clear local history in the app. Images you separately save to Photos or share remain under your control and must be deleted separately.</li>
-            <li><strong>Generation usage records:</strong> Paid usage reservations older than 7 days are removed when the server next processes a new generation reservation. This is not a guaranteed background deletion deadline. Separately, a minimal first-portrait record (hashed account identifier, request identifier, reservation time and generation-submission response, such as a task identifier) is kept without a weekly expiry while needed to enforce the one-time Basic allowance and prevent duplicate charges. This record does not contain photos, prompts or generated images. Failed or interrupted requests may still count if the provider may have accepted the work. Clearing local photos/history or reinstalling the app does not reset these server usage records. Apple Sandbox test records are kept separately from live purchase records. Contact us for assistance with access or deletion requests as described below.</li>
-            <li><strong>Subscription records:</strong> Apple and RevenueCat retain records needed to provide and restore subscriptions and meet applicable obligations. Clearing local history or revoking photo consent does not delete purchase records or cancel a subscription.</li>
-            <li><strong>Deletion requests:</strong> Contact <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a> to request access, correction or deletion, including assistance with provider-held data. Include the approximate generation or purchase date; do not resend face photos. We will identify the relevant records with you and coordinate applicable requests with providers. We cannot promise a provider deletion deadline that has not been confirmed.</li>
-        </ul>
-    </div>
-    <div class="policy-block">
-        <h3>Service Providers and International Processing</h3>
-        <p>Oracle Cloud hosts the BabyLook proxy in Frankfurt. Snapgen provides AI generation using Nano Banana 2 and supplies result-download URLs. Processing and storage by Snapgen and its infrastructure may occur outside Germany; a Frankfurt proxy does not guarantee that all processing remains in the EU.</p>
-        <p>RevenueCat provides subscription infrastructure and processes customer data on infrastructure in the United States. Its end-user processing is governed by its service agreements. See <a href="https://www.revenuecat.com/privacy">RevenueCat’s privacy information</a> and <a href="https://www.revenuecat.com/dpa">data processing addendum</a>. Apple handles purchases under <a href="https://www.apple.com/legal/privacy/data/en/app-store/">Apple’s App Store privacy information</a>.</p>
-        <p>The current app’s photo generation route uses Oracle Cloud and Snapgen. It does not use the former Cloudflare Workers / CreativeLabs route.</p>
-    </div>
-    <div class="policy-block">
-        <h3>Security and Your Choices</h3>
-        <p>Photo uploads use HTTPS. Provider credentials remain on the backend rather than in the app. No system can guarantee absolute security.</p>
-        <p>You may choose not to generate portraits, revoke upload consent, clear local history, and request access, correction or deletion by contacting us. Depending on your location, you may also have rights to restrict or object to processing, obtain a copy of your data, or complain to a data-protection authority. Manage or cancel subscriptions through your Apple account’s subscription settings.</p>
-    </div>
-    <div class="policy-block">
-        <h3>Children’s Privacy</h3>
-        <p>BabyLook is not intended for children under 13. We do not knowingly collect personal information from children under 13. Contact us if you believe a child has submitted personal information so we can investigate and address the relevant records.</p>
-    </div>
-    <div class="policy-block">
-        <h3>Changes and Contact</h3>
-        <p>We update this page when our data practices change and show the latest update date. Material changes to photo processing are reflected in the app’s consent notice.</p>
-        <p>For privacy questions or requests, contact Lokman Şahin at <a href="mailto:lokman782782@gmail.com">lokman782782@gmail.com</a>.</p>
-    </div>
+    <section>
+      <h2>Local data</h2>
+      <p>Chosen photos are kept in app memory for the current flow. Generated portraits, keepsakes, settings and usage information are stored on your device. You may delete photographs/history and revoke processing consent in Settings. Keepsake names and notes are rendered locally and are not sent to the AI provider. Saving or sharing exports the selected image to the destination you choose.</p>
+    </section>
 
-    <div class="footer">
-        © 2026 Babylook. All rights reserved.
-    </div>
-</div>
+    <section>
+      <h2>Baby Journal</h2>
+      <p>Baby Journal data, including your baby's profile (name, due or birth date and gender choice), memories, journal photos and reminder times, stays on your device. It is not uploaded to BabyLook's backend and is not sent to the AI provider. Journal reminders are scheduled as local notifications on your device. Saving or sharing a memory exports it to the destination you choose.</p>
+    </section>
 
+    <section>
+      <h2>Usage and subscriptions</h2>
+      <p>RevenueCat and Apple App Store or Google Play process installation identifiers, purchase and subscription information to provide billing and restore. The backend verifies subscriptions before paid generation. On iOS, Apple-signed AppTransaction and transaction proofs establish access; raw account identifiers are hashed for quota records. On Android, Play Integrity evaluates app/device/licensing integrity. An anonymous server-generated installation ID and secure session establish access; the backend uses RevenueCat to verify Google Play entitlement. Usage markers are kept without an automatic expiry to enforce one free portrait; paid generation timestamps use a rolling seven-day quota. Operational logs may contain IP/network metadata and request/error timestamps; BabyLook application logs do not include selected photos or session secrets.</p>
+    </section>
+
+    <section>
+      <h2>No login or cloud photo synchronization</h2>
+      <p>This version does not provide a shared account or history across iOS and Android. Android free allowance is installation-based and may reset on reinstall. No advertising SDK is integrated in this application.</p>
+    </section>
+
+    <section>
+      <h2>Your choices</h2>
+      <p>Use only photos you have permission to process. Do not upload someone else's photos without consent. Contact us for privacy questions or requests. Requests affecting provider-held data are subject to the provider's capabilities; deletion of remote data is not promised by deleting local history.</p>
+    </section>
+  </main>
+  <footer>
+    <p><a href="./">Home</a> · <a href="https://appterms.site/babylook/terms/">Terms of Use</a> · <a href="mailto:lokman782782@gmail.com">Contact</a></p>
+    <p>© 2026 BabyLook</p>
+  </footer>
 </body>
 </html>

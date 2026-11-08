@@ -50,7 +50,8 @@ npx wrangler deploy --dry-run
 
 The full policy text lives only in `privacy.html`. It mirrors the canonical
 policy the app links to, https://appterms.site/babylook/privacy/ (source:
-`legal-site/babylook/privacy/index.html`), plus a Baby Journal paragraph.
+`legal-site/babylook/privacy/index.html`, published from the
+`sahinlokman/appterms-site` repo), section for section.
 When the canonical policy changes, update `privacy.html` to match and bump its
 "Updated" date.
 
